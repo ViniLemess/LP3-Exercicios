@@ -9,7 +9,7 @@ public class ConverterApp {
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
 
-        while (run == true) {
+        while (run) {
             System.out.println("Type the letter for the intended operation:");
             System.out.println("A - Turn roman to arabic");
             System.out.println("B - Turn arabic to roman");
