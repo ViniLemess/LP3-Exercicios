@@ -1,5 +1,6 @@
 <strong>O que é Clean Code?</strong>
 <br>
+<br>
 O clean code é um livro escrito por Robert Martin
 <br>
 onde ele descreve uma serie de boas práticas e regras
