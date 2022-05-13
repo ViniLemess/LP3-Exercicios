@@ -8,10 +8,11 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MetallicaTicketSell {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         var name = readString("Type the name of the customer:");
-        var dateOfBirth = LocalDate.parse(readString("Type the birth date of the customer (YEAR-MONTH-DAY)"));
-        var student = Boolean.valueOf(readString("Type true if the customer is a student else type false:"));
+        var dateOfBirth = readDate("Type the birth date of the customer (YEAR-MONTH-DAY)");
+        var student = scanner.nextBoolean();
         Customer customer = new Customer(name, dateOfBirth, student);
 
         System.out.println("Type the ticket " + customer.getName() + " wish to buy:");
@@ -37,8 +38,18 @@ public class MetallicaTicketSell {
         }
     }
     private static String readString(String message) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         return scanner.nextLine();
+    }
+    private static LocalDate readDate(String message) {
+        LocalDate date = null;
+        while (date == null) {
+            try {
+                date = LocalDate.parse(readString(message));
+            } catch (Exception exception) {
+                System.err.println("Type a valid date!");
+            }
+        }
+        return date;
     }
 }
