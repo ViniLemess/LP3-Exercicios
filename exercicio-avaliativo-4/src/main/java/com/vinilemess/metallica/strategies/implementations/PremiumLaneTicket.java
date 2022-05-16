@@ -9,13 +9,12 @@ public class PremiumLaneTicket implements TicketSellStrategy {
     private final BigDecimal premiumLanePrice = BigDecimal.valueOf(400);
 
     @Override
-    public boolean sellTicket(Customer customer) {
+    public String sellTicket(Customer customer) {
         if (customer == null) {
             throw new IllegalCallerException("Customer cannot be null!");
         }
         BigDecimal finalPrice = premiumLanePrice.subtract(calculateDiscount(customer));
-        System.out.println(customer.getName() + " have successfully bought the a premium lane ticket, price : $" + finalPrice);
-        return true;
+        return customer.getName() + " have successfully bought the premium lane ticket, price : $" + finalPrice;
     }
 
     @Override

@@ -10,10 +10,10 @@ public class TicketSellContext {
         this.strategy = strategy;
     }
 
-    public void executeSell(Customer customer) {
+    public String executeSell(Customer customer) {
         if (customer == null) {
             throw new IllegalCallerException("Customer cannot be null!");
         }
-        strategy.sellTicket(customer);
+        return strategy.sellTicket(customer);
     }
 }

@@ -9,13 +9,12 @@ public class LowerChairTicket implements TicketSellStrategy {
     private final BigDecimal lowerChairPrice = BigDecimal.valueOf(200);
 
     @Override
-    public boolean sellTicket(Customer customer) {
+    public String sellTicket(Customer customer) {
         if (customer == null) {
             throw new IllegalCallerException("Customer cannot be null!");
         }
         BigDecimal finalPrice = lowerChairPrice.subtract(calculateDiscount(customer)) ;
-        System.out.println(customer.getName() + " have successfully bought the a lower chair ticket, price : $" + finalPrice);
-        return true;
+        return customer.getName() + " have successfully bought the a lower chair ticket, price : $" + finalPrice;
     }
 
     @Override

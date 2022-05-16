@@ -33,20 +33,23 @@ public class Customer {
     }
 
     public boolean isElderly() {
-        long age = ChronoUnit.DAYS.between(LocalDate.now(), birthDate);
+        long age = ChronoUnit.YEARS.between(birthDate, LocalDate.now());
         return age >= 60;
     }
 
-    private void isValid() {
+    private boolean isValid() {
         List<String> messages = new ArrayList<>();
         if (this.name == null || this.name.isBlank()) {
             messages.add("Invalid name!");
         }
         if (this.birthDate == null) {
-            messages.add("birth date cannot be null!");
+            messages.add("Invalid birth date!");
         }
         if (this.student == null) {
-            messages.add("Student field must be informed!");
+            messages.add("Invalid student!");
+        }
+        if (messages.isEmpty()) {
+            return true;
         }
         throw new IllegalArgumentException(messages.toString());
     }

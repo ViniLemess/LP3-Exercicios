@@ -10,10 +10,11 @@ import java.util.Scanner;
 public class MetallicaTicketSell {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+
         var name = readString("Type the name of the customer:");
         var dateOfBirth = readDate("Type the birth date of the customer (YEAR-MONTH-DAY)");
-        var student = scanner.nextBoolean();
-        Customer customer = new Customer(name, dateOfBirth, student);
+        var student = readString("Type true if the customer is a student else type false");
+        Customer customer = new Customer(name, dateOfBirth, Boolean.valueOf(student));
 
         System.out.println("Type the ticket " + customer.getName() + " wish to buy:");
         System.out.println("Lane");
@@ -32,7 +33,7 @@ public class MetallicaTicketSell {
             case HIGHER_CHAIR -> context = new TicketSellContext(new HigherChairTicket());
         }
         try {
-            context.executeSell(customer);
+            System.out.println(context.executeSell(customer));
         } catch (Exception exception) {
             System.err.println(exception.getMessage());
         }
