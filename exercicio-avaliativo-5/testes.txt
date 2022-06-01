@@ -1,0 +1,26 @@
+Explique, com suas palavras, a importância da adoção dos Testes Automatizados dessa categoria?
+    Dentro da pirâmide de testes, cada um tem sua importância, começando pela base, os testes
+    de unidade são alguns dos mais importantes, vão testar a menor uniadade possivel do sistema,
+    um comportamento especifico de uma classe. Subindo na pirâmide temos o teste de integração
+    que servem para garantir o funcionamento em conjunto de dois ou mais componentes do sistema,
+    de nada adianta somente termos testes unitarios se o conjunto não funciona, sendo a integração
+    dos componentes o principal valor desse tipo de teste. No topo da pirâmide temos o teste ponta
+    a ponta, que seria um teste para simular o comportamento de um úsuario no seu sistema, é o
+    teste mais caro e que mais demanda tempo para ser escrito e deve ser feito apenas para as
+    funcionalidades mais importantes do sistema.
+
+Cite exemplos de aplicação desses Testes?
+    Para um sistema de estacionamento, podemos ter testes únitarios que verificam se por exemplo um método de
+    pagamento está sendo calculado corretamente. Um teste de integração para ver se dados como horario de entrada,
+    horario de saida e placa do carro estão sendo gravados corretamente no banco de dados. E por fim como
+    teste ponta a ponta podemos verificar se o sistema por inteiro funciona, com um carro entrando no estacionamento
+    em x horario, saindo em y, sendo assim testando da perspectiva de um usuario.
+
+Quais Tecnologias/Frameworks poderiam ser utilizados em cada Categoria?
+    Para testes unitarios podemos usar ferramentas como as bibliotecas Junit5 e Mockito-core
+    para aplicações em Java, no junit temos metododos como assertEquals onde podemos comparar
+    uma resposta esperada com o retorno de algum método e saber se funciona como deveria.
+    Para testes de integração podemos usar um banco em mémoria como H2 para simular o funcionamento
+    de um banco de dados relacional e ver como nosso componente se comporta em conjunto com o
+    banco de dados. Para testes ponta a ponta podemos usar ferramentas como Selenium ou Cypress
+    que nos dão ferramentas para simular o comportamento de úsuarios em nossas aplicações.
