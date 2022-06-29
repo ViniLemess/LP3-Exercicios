@@ -1,4 +1,4 @@
-package org.fundatec.vinilemess.pokemonapiresttemplate.model;
+package org.fundatec.vinilemess.pokemonapiresttemplate.external;
 
 import lombok.Data;
 

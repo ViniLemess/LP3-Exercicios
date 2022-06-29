@@ -1,7 +1,8 @@
 package org.fundatec.vinilemess.pokemonapiresttemplate.service.implementation;
 
-import org.fundatec.vinilemess.pokemonapiresttemplate.model.Response.PokemonResponse;
+import org.fundatec.vinilemess.pokemonapiresttemplate.external.response.PokemonResponse;
 import org.fundatec.vinilemess.pokemonapiresttemplate.service.PokemonIntegrationService;
+import org.fundatec.vinilemess.pokemonapiresttemplate.util.PokemonConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
@@ -21,12 +22,14 @@ public class PokemonIntegrationServiceImpl implements PokemonIntegrationService 
 
     public PokemonResponse findPokemonById(int id) {
         String url = generateURLIntegration(id);
-        return this.restTemplate.getForObject(url, PokemonResponse.class);
+        PokemonResponse pokemon = this.restTemplate.getForObject(url, PokemonResponse.class);
+        return PokemonConverter.convert(pokemon);
     }
 
     public PokemonResponse findPokemonByName(String name) {
         String url = generateURLIntegration(name);
-        return this.restTemplate.getForObject(url, PokemonResponse.class);
+        PokemonResponse pokemon = this.restTemplate.getForObject(url, PokemonResponse.class);
+        return PokemonConverter.convert(pokemon);
     }
 
     private String generateURLIntegration(int id) {

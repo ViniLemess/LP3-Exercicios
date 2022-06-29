@@ -1,7 +1,8 @@
 package org.fundatec.vinilemess.pokemonapiresttemplate.controller;
 
 import io.swagger.annotations.ApiParam;
-import org.fundatec.vinilemess.pokemonapiresttemplate.model.Response.PokemonResponse;
+import org.fundatec.vinilemess.pokemonapiresttemplate.external.response.PokemonResponse;
+import org.fundatec.vinilemess.pokemonapiresttemplate.util.PokemonConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
