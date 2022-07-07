@@ -9,5 +9,4 @@ public class PokemonApiRestTemplateApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PokemonApiRestTemplateApplication.class, args);
 	}
-
 }
